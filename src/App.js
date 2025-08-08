@@ -1,24 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+// src/App.js
+import React from 'react';
+import { Container, Typography, Button, Box } from '@mui/material';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
+    <Container maxWidth="sm" sx={{ mt: 10 }}>
+      <Box textAlign="center">
+        <Typography variant="h3" gutterBottom>
+          Welcome to Devias UI
+        </Typography>
+        <Typography variant="body1" gutterBottom>
+          This is a customized version of the default React App.
+        </Typography>
+        <Button
+          variant="contained"
+          color="primary"
+          href="https://mui.com"
           target="_blank"
-          rel="noopener noreferrer"
         >
-          Learn React
-        </a>
-      </header>
-    </div>
+          Learn Material UI
+        </Button>
+      </Box>
+    </Container>
   );
 }
 
