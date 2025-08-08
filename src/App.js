@@ -1,27 +1,29 @@
 // src/App.js
 import React from 'react';
-import { Container, Typography, Button, Box } from '@mui/material';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
+import Navbar from './components/Navbar';
+import Login from './pages/Login';
+import Signup from './pages/Signup';
+import MyPage from './pages/MyPage';
+import Item1 from './pages/Item1';
+import Item2 from './pages/Item2';
 
 function App() {
   return (
-    <Container maxWidth="sm" sx={{ mt: 10 }}>
-      <Box textAlign="center">
-        <Typography variant="h3" gutterBottom>
-          Welcome to Devias UI
-        </Typography>
-        <Typography variant="body1" gutterBottom>
-          This is a customized version of the default React App.
-        </Typography>
-        <Button
-          variant="contained"
-          color="primary"
-          href="https://mui.com"
-          target="_blank"
-        >
-          Learn Material UI
-        </Button>
-      </Box>
-    </Container>
+    <Router>
+      <Navbar />
+      <div style={{ padding: '20px' }}>
+        <Routes>
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/mypage" element={<MyPage />} />
+          <Route path="/item1" element={<Item1 />} />
+          <Route path="/item2" element={<Item2 />} />
+          <Route path="*" element={<Login />} /> {/* 기본 화면 */}
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
